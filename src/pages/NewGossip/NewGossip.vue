@@ -84,8 +84,7 @@
 
 <style scoped>
    form {   
-       display: flex;       
-       width: 100%;
+       display: flex;           
        margin: 0px 20%;
        justify-content: center;
    }
