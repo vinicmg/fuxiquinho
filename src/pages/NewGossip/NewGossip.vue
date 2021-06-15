@@ -65,6 +65,10 @@
                     .catch((error) => {
                         console.error("Error writing document: ", error);
                     });
+
+                this.author = '',
+                this.content = '',
+                this.title= ''
           }
       },
       computed: {
