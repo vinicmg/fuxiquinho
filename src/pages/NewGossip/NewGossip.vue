@@ -81,12 +81,12 @@
 <style scoped>
    form {   
        display: flex;       
+       width: 100%;
        margin: 0px 20%;
        justify-content: center;
    }
 
-   .mb-3 {
-       
+   .mb-3 {       
        width: 100%;
    }
 
