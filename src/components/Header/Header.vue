@@ -15,9 +15,9 @@
                 <img alt="menu-logo" id="menu-logo" src="../../assets/logo.png" />
                 <ul>
                     <li><a href="/fuxiquinho">Inicio</a></li>
-                    <li><a href="/nova">Nova Fofoquinha</a></li>
-                    <li><a href="/sobre">Sobre</a></li>
-                    <li><a href="/contato">Contato</a></li>
+                    <li><a href="/fuxiquinho/nova">Nova Fofoquinha</a></li>
+                    <li><a href="/fuxiquinho/sobre">Sobre</a></li>
+                    <li><a href="/fuxiquinho/contato">Contato</a></li>
                 </ul>
             </div>
         </nav>
