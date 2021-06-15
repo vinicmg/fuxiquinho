@@ -8,11 +8,11 @@ Vue.use(VueRouter)
 
 const routes = [
     {
-        path: '/fuxiquinho',
+        path: '/fuxiquinho/',
         component: Home
     },
     {
-        path: '/fuxiquinho/nova',
+        path: '/fuxiquinho/nova/',
         component: NewGossip
     }
 ];
