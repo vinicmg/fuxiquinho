@@ -8,18 +8,20 @@ Vue.use(VueRouter)
 
 const routes = [
     {
-        path: '/fuxiquinho/',
+        path: '/',
+        name: 'home',
         component: Home
     },
     {
-        path: '/fuxiquinho/nova/',
+        path: '/nova',
+        name: 'nova',
         component: NewGossip
     }
 ];
 
 const router = new VueRouter({
-    routes,
-    mode: 'hash'
+    mode: "history",
+    routes    
   });
 
 export default router;

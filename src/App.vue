@@ -2,7 +2,6 @@
   <div id="app">
     <Header />
     <router-view></router-view>
-    <!--<router-view path="$router.key" />-->
     <Footer />
   </div>
 </template>
@@ -14,7 +13,7 @@ import Header from './components/Header/Header.vue'
 import Footer from './components/Footer/Footer.vue'
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
     Header,
     Footer
