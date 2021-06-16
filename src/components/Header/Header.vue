@@ -13,11 +13,11 @@
             <div id="menu-items" :class="{active:menuActive}">
 
                 <img alt="menu-logo" id="menu-logo" src="../../assets/logo.png" />
-                <ul>            
-                    <li><a href="/fuxiquinho">Inicio</a></li>
-                    <li><a href="/fuxiquinho/nova">Nova Fofoquinha</a></li>
-                    <li><a href="/fuxiquinho/sobre">Sobre</a></li>
-                    <li><a href="/fuxiquinho/contato">Contato</a></li>
+                <ul>    
+                    <router-link to="/">Inicio</router-link>        
+                    <router-link to="/nova">Nova Fofoquinha</router-link>        
+                    <router-link to="/sobre">Sobre</router-link>        
+                    <router-link to="/contato">Contato</router-link>        
                 </ul>
             </div>
         </nav>
