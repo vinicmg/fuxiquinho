@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
+    "deploy": "node scripts/gh-pages-deploy.js",
     "build": "webpack --mode production",
     "start": "webpack serve --mode development --history-api-fallback"
   },
