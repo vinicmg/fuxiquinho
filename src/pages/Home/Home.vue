@@ -1,65 +1,69 @@
 <template>
-    <main>
-        <div class="list-group">
-            <div 
-                class="list-group-item" 
-                v-for="gossip in gossipsData"
-                v-bind:key="gossip.id">
-                <span><strong>{{ gossip.title }}</strong></span>
-                <br/>
-                <p>{{ gossip.content }}</p>            
-                <br/>
-                <p>{{ gossip.author }}  - {{ gossip.date }}</p>
-            </div>
-        </div>
-    </main>
+  <main>
+    <div class="list-group">
+      <div
+        class="list-group-item"
+        v-for="gossip in gossipsData"
+        v-bind:key="gossip.id"
+      >
+        <span
+          ><strong>{{ gossip.title }}</strong></span
+        >
+        <br />
+        <p>{{ gossip.content }}</p>
+        <br />
+        <p>{{ gossip.author }} - {{ gossip.date }}</p>
+      </div>
+    </div>
+  </main>
 </template>
 
 <script>
-    import firebase from "../../firebaseConfig";
-    import moment from "moment" 
+import firebase from "../../firebaseConfig";
+import moment from "moment";
 
-    const db = firebase.firestore();
+const db = firebase.firestore();
 
-    export default {
-        name: 'Home',
-        data() {
-            return {
-                gossipsData: []
-            }
-        },
-        methods: {
-            readGossips() {
-                this.gossipsData = [];
-                db.collection("gossips")
-                    .get()
-                    .then((querySnapshot) => {
-                    querySnapshot.forEach((doc) => {
-                        this.gossipsData.push({
-                        id: doc.id,
-                        title: doc.data().title,
-                        date: moment(doc.data().date.toDate()).format('DD/MM/YYYY'),
-                        content: doc.data().content,
-                        author: doc.data().author
-                        });
-                        console.log(doc.id, " => ", doc.data());
-                    });
-                    })
-                    .catch((error) => {
-                        console.log("Error getting gossips: ", error);
-                    });
-                },
-        },
-        mounted() {
-            this.readGossips();
-        },
-    }
+export default {
+  name: "Home",
+  data() {
+    return {
+      gossipsData: [],
+    };
+  },
+  methods: {
+    readGossips() {
+      this.gossipsData = [];
+      db.collection("gossips")
+        .orderBy("date", "desc")
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            this.gossipsData.push({
+              id: doc.id,
+              title: doc.data().title,
+              date: moment(doc.data().date.toDate()).format("DD/MM/YYYY"),
+              content: doc.data().content,
+              author: doc.data().author,
+            });
+            console.log(doc.id, " => ", doc.data());
+          });
+        })
+        .catch((error) => {
+          console.log("Error getting gossips: ", error);
+        });
+    },
+  },
+  mounted() {
+    this.readGossips();
+  },
+};
 </script>
 
-<style scoped>    
-    .list-group {
-        margin: 0px 20px;
-        padding-top: 10px;
-        width: 50%;
-    }
+<style scoped>
+.list-group {
+  margin: 0px 20px;
+  padding-top: 10px;
+  width: 50%;
+}
 </style>
