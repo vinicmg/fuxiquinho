@@ -1,10 +1,9 @@
 <template>
   <header>
     <nav class="container">
-      <a href="/">
+      <router-link to="/">
         <img alt="logo" id="logo" src="../../assets/logo.png" />
-      </a>
-
+      </router-link>
       <h2>Fuxiquinho</h2>
 
       <img
@@ -105,11 +104,11 @@ nav {
   display: flex;
 }
 
- ul {
+ul {
   margin: 20px 0px;
 }
 
- ul a {
+ul a {
   color: white;
   margin-left: 10px;
   text-decoration: none;
@@ -121,7 +120,7 @@ h2 {
 }
 
 .router-link-active {
-    color: white;
+  color: white;
 }
 
 @media screen and (min-width: 700px) {
