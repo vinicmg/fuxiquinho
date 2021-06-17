@@ -66,7 +66,7 @@ export default {
 .list-group {
   margin: 0px 20px;
   padding-top: 10px;
-  width: 50%;
+  width: 80%;
 }
 
 .overlay {
@@ -78,6 +78,11 @@ export default {
   left: 0;
   margin-bottom: 60px;
   margin-top: 60px;
+  display: flex;
+  justify-content: center;
 }
 
+.list-group-item {
+  margin-bottom: 10px;
+}
 </style>
